@@ -11,15 +11,18 @@ namespace UsingDiagnosticsTask
             Stopwatch stopwatch = new Stopwatch();
             
             stopwatch.Start();
-            Console.WriteLine("result gcd1: " + GcdAlgorithms.Gcd1(numbers));
+            Console.WriteLine("result gcd1: " + GcdAlgorithms.Gcd1ForArray(numbers));
             stopwatch.Stop();
             Console.WriteLine("time gcd1: " + stopwatch.Elapsed);
             
             stopwatch.Start();
-            Console.WriteLine("result gcd2: " + GcdAlgorithms.Gcd2(numbers));
+            Console.WriteLine("result gcd2: " + GcdAlgorithms.Gcd2ForArray(numbers));
             stopwatch.Stop();
             Console.WriteLine("time gcd2: " + stopwatch.Elapsed);
+
             
+           
+
         }
         
        

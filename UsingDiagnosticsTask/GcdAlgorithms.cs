@@ -5,32 +5,32 @@ namespace UsingDiagnosticsTask
 {
     public class GcdAlgorithms
     {
-        public static int Gcd1(int[] numbers)
+        public static int Gcd1ForArray(int[] numbers)
         {
-            return numbers.Aggregate(Gcd1);
+            return numbers.Aggregate(Gcd1For2Numb);
         }
         
-       static int Gcd1(int a, int b)
+        public static int Gcd1For2Numb(int a, int b)
         {
-            return b == 0 ? a : Gcd1(b, a % b);
+            return b == 0 ? a : Gcd1For2Numb(b, a % b);
         }
         
-        public static int Gcd2(int[] x) {
+        public static int Gcd2ForArray(int[] x) {
             if (x.Length < 2) {
                 throw new ArgumentException("Do not use this method if there are less than two numbers.");
             }
-            int tmp = Gcd2(x[x.Length - 1], x[x.Length - 2]);
+            int tmp = Gcd2For2Numb(x[x.Length - 1], x[x.Length - 2]);
             for (int i = x.Length - 3; i >= 0; i--) {
                 if (x[i] < 0) {
                     throw new ArgumentException("Cannot compute the least common multiple of several numbers where one, at least, is negative.");
                 }
-                tmp = Gcd2(tmp, x[i]);
+                tmp = Gcd2For2Numb(tmp, x[i]);
             }
             return tmp;
             
         }
         
-        static int Gcd2(int x1, int x2) {
+        public static int Gcd2For2Numb(int x1, int x2) {
             if (x1 < 0 || x2 < 0) {
                 throw new ArgumentException("Cannot compute the GCD if one integer is negative.");
             }
