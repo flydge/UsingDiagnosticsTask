@@ -7,12 +7,12 @@ namespace UsingDiagnosticsTask
     {
         public static int Gcd1ForArray(int[] numbers)
         {
-            return numbers.Aggregate(Gcd1For2Numb);
+            return numbers.Aggregate(Gcd1For1Numb);
         }
         
-        public static int Gcd1For2Numb(int a, int b)
+        public static int Gcd1For1Numb(int a, int b)
         {
-            return b == 0 ? a : Gcd1For2Numb(b, a % b);
+            return b == 0 ? a : Gcd1For1Numb(b, a % b);
         }
         
         public static int Gcd2ForArray(int[] x) {
